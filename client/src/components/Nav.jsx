@@ -11,20 +11,17 @@ export default function Nav() {
           Home
         </Link>,
         <Link key={2} className="nav-link text-light" to="/about">
-          About Us
+          About
         </Link>,
-        <Link key={3} className="nav-link text-light" to="/blog">
-        Blog
-      </Link>,
-      <Link key={4} className="nav-link text-light" to="/contact">
-      Contact
-    </Link>,
-    <Link key={5} className="nav-link text-light" to="/employment">
-    Employment
-  </Link>,
-  <Link key={6} className="nav-link text-light" to="/projects">
-  Projects
-</Link>,
+        <Link key={3} className="nav-link text-light" to="/contact">
+          Contact
+        </Link>,
+        <Link key={4} classname="nav-link text-light" to="/Employment">
+          Employment
+        </Link>,
+        <Link key={5} classname="nav-link text-light" to="/Projects">
+          Projects
+        </Link>
       ]}
     />
   );
