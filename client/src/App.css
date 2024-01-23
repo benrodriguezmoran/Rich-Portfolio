@@ -57,6 +57,28 @@ article {
   background-color: #242831; /* Dark mode background color */
 }
 
+.highlight-box{
+  padding : 20px 20px 0px 20px;
+  border: 1px solid #333743; 
+  margin-bottom: 20px;
+  margin-top: 20px;
+  box-shadow: 0 0 10px #000000;
+  display: inline-block;
+}
+
+.highlight-box-content{
+  padding: 20px;
+}
+
+.highlight-box:hover{
+  box-shadow: 0 0 20px #000000;
+}
+
+.highlight-box-container{
+  display: flex;
+  flex-direction: column;
+}
+
 /* Footer styles */
 footer {
   padding: 10px 0;
