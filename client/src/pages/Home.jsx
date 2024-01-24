@@ -50,7 +50,7 @@ export default function Home() {
 
 
       {currentTab === 'Login' && (
-        <Modal isOpen={isModalOpen} closeModal={closeModal}>
+        <Modal isOpen={isModalOpen} onClose={closeModal} currentTab={currentTab}>
           <h2>Login Form</h2>
           <form>
             <label>
@@ -66,7 +66,7 @@ export default function Home() {
         </Modal>
       )}
       {currentTab === 'Signup' && (
-        <Modal isOpen={isModalOpen} closeModal={closeModal}>
+        <Modal isOpen={isModalOpen} onClose={closeModal} currentTab={currentTab}>
           <h2>Signup Form</h2>
           <form>
             <label>
