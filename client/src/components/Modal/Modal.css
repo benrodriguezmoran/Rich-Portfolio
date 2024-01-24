@@ -1,0 +1,32 @@
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .modal-content {
+    background-color: #242831; /* Dark mode background color */
+    color: #BCBFC6; /* Dark mode text color */
+    padding: 20px;
+    border: 1px solid #333743; /* Dark mode border color */
+    border-radius: 8px;
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 0 10px #000000;
+  }
+  
+  .modal-close {
+    cursor: pointer;
+    border: none;
+    background: none;
+    color: #61dafb; /* Color similar to the logo.react hover color */
+    font-size: 16px;
+    margin-top: 10px;
+  }
