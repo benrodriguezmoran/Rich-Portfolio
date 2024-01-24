@@ -1,2 +1,4 @@
-const typeDefs = ``
+const typeDefs = `
+
+`
 module.exports = typeDefs;
