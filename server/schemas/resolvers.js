@@ -1,4 +1,4 @@
-const { User, Product, Category, Order } = require('../models');
+const { User, Post, Project, Order } = require('../models');
 const { signToken, AuthenticationError } = require('../utils/auth');
 // const stripe = require('stripe')('KEY');
 
@@ -8,6 +8,6 @@ const resolvers = {
     },
     Mutation: {
 
-    },
+    }
 };
 module.exports = resolvers;
