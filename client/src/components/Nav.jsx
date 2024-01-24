@@ -1,9 +1,24 @@
 // Bringing in the required import from 'react-router-dom'
 import { Link } from 'react-router-dom';
 import Navbar from './UI/Navbar';
+import React, {useState} from 'react';
 
 export default function Nav() {
-  // The Navbar UI component will render each of the Link elements in the links prop
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [currentTab, setCurrentTab] = useState('');
+
+  const openModal = (tab) => {
+    console.log('Opening modal for tab:', tab);
+    setIsModalOpen(true);
+    setCurrentTab(tab);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+    setCurrentTab('');
+  }
+  
+
   return (
     <Navbar
       links={[
@@ -16,12 +31,18 @@ export default function Nav() {
         <Link key={3} className="nav-link text-light" to="/contact">
           Contact
         </Link>,
-        <Link key={4} classname="nav-link text-light" to="/Employment">
+        <Link key={4} className="nav-link text-light" to="/Employment">
           Employment
         </Link>,
-        <Link key={5} classname="nav-link text-light" to="/Projects">
+        <Link key={5} className="nav-link text-light" to="/Projects">
           Projects
-        </Link>
+        </Link>,
+        <button key={6} className='login-btn' onClick={() => openModal('Login')}>
+        Login
+      </button>,
+      <button key={7} className='signup-btn' onClick={() => openModal('Signup')}>
+        Signup
+      </button>
       ]}
     />
   );
