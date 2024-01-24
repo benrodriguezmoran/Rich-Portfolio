@@ -43,6 +43,21 @@ nav a:hover {
   text-decoration: underline;
 }
 
+.login-btn,
+.signup-btn{
+  background-color: #333743;
+  color: #BCBFC6;
+  padding: 5px 10px;
+  margin: 0 5px;
+  border: none;
+  cursor: pointer;
+}
+.login-btn:hover,
+.signup-btn:hover{
+  background-color: #646cff;
+  color: #fff;
+}
+
 /* Main content styles */
 section {
   margin: 20px 0;
