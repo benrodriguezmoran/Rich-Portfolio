@@ -1,3 +1,20 @@
+form{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+label{
+  display: flex;
+  margin-bottom: 8px;
+
+}
+
+input{
+  display: flex;
+  margin-bottom: 16px;
+}
+
 .modal-overlay {
     position: fixed;
     top: 0;
@@ -20,6 +37,10 @@
     width: 100%;
     text-align: center;
     box-shadow: 0 0 10px #000000;
+  }
+
+  .modal-content a {
+    color: #61dafb; /* Color similar to the logo.react hover color */
   }
   
   .modal-close {
