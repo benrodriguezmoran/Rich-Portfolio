@@ -2,6 +2,8 @@ const express = require('express');
 const { ApolloServer } = require('@apollo/server');
 const { expressMiddleware } = require('@apollo/server/express4');
 const path = require('path');
+const multer = require('multer');
+
 
 const { typeDefs, resolvers } = require('./schemas');
 const db = require('./config/connection');
@@ -13,11 +15,32 @@ const server = new ApolloServer({
   resolvers,
 });
 
+// Set up storage for multer
+// const storage = multer.diskStorage({
+//   destination: function (req, file, cb) {
+//     cb(null, 'uploads/'); // Define the destination folder for uploaded files
+//   },
+//   filename: function (req, file, cb) {
+//     const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9);
+//     cb(null, file.fieldname + '-' + uniqueSuffix + path.extname(file.originalname));
+//   }
+// });
+
+// const upload = multer({ storage: storage });
+
 const startApolloServer = async () => {
   await server.start();
 
   app.use(express.urlencoded({ extended: false }));
   app.use(express.json());
+  
+  // // Use multer middleware for handling file uploads
+  // app.post('/upload-profile-pic', upload.single('profilePic'), (req, res) => {
+  //   // Handle the uploaded file, save the file path to the user's profile, etc.
+  //   const filePath = req.file.path;
+  //   // Send a response indicating success
+  //   res.json({ message: 'Profile picture uploaded successfully', filePath });
+  // });
 
   if (process.env.NODE_ENV === 'production') {
     app.use(express.static(path.join(__dirname, '../client/dist')));
