@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import '../App.css';
+import Modal from '../components/Modal/Modal';
 import Nav from '../components/Nav';
 
 
