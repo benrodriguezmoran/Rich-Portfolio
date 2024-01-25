@@ -34,6 +34,7 @@ function App() {
     <>
       {isOpen && <Modal isOpen={isOpen} onClose={closeModal} currentTab={currentTab} toggleModal={toggleModal}/>}
       <Nav openLoginModal={openLoginModal} openSignupModal={openSignupModal} toggleModal={toggleModal}/>
+      <Outlet />
     </>
   );
 }
