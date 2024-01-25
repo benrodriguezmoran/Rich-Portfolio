@@ -9,7 +9,7 @@ body {
   font-family: 'Arial', sans-serif;
   line-height: 1.6;
   color: #BCBFC6;
-  background-color: #242831;
+  background-color: #1c2231;
 }
 
 .container {
@@ -29,6 +29,7 @@ nav {
   padding: 10px 0;
   text-align: center;
   background-color: #5A6988; /* Dark mode background color */
+  border-bottom: 3px solid #333743; /* Dark mode border color */
 }
 
 nav a {
@@ -37,10 +38,13 @@ nav a {
   margin: 0 5px;
   display: inline-flex;
   color: #BCBFC6; /* Dark mode text color */
+  background-color: #333743;
+  border-radius: 5px;
 }
 
 nav a:hover {
   text-decoration: underline;
+  background-color: #646cff;
 }
 
 .login-btn,
@@ -51,6 +55,8 @@ nav a:hover {
   margin: 0 5px;
   border: none;
   cursor: pointer;
+  background-color: #333743;
+  border-radius: 5px;
 }
 .login-btn:hover,
 .signup-btn:hover{
@@ -77,7 +83,9 @@ article {
   border: 1px solid #333743; 
   margin-bottom: 20px;
   margin-top: 20px;
-  box-shadow: 0 0 10px #000000;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  background-color: #2c303b;
+  border-radius: 8px;
   display: inline-block;
 }
 
