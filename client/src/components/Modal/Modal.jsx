@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./Modal.css";
 
-const Modal = ({ isOpen, onClose, currentTab }) => {
+const Modal = ({ isOpen, onClose, currentTab, toggleModal }) => {
     console.log('Modal isOpen:', isOpen, 'currentTab:', currentTab);
     const [formData, setFormData] = useState({
     username: "",
@@ -77,7 +77,7 @@ const Modal = ({ isOpen, onClose, currentTab }) => {
           {currentTab === "Login"
             ? "Don't have an account? "
             : "Already have an account? "}
-          <a href="#">
+          <a href="#" onClick={(e) => {e.preventDefault(); toggleModal(); }}>
             {currentTab === "Login" ? "Sign up here" : "Login here"}
           </a>
           .

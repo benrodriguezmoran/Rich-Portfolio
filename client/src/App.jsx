@@ -10,21 +10,30 @@ function App() {
   const [isOpen, setIsOpen] = useState(false);
   const [currentTab, setCurrentTab] = useState('');
 
-  const openModal = (tab) => {
-    console.log('Opening modal for tab:', tab);
-    setIsOpen(true);
-    setCurrentTab(tab);
-  };
-
   const closeModal = () => {
     setIsOpen(false);
     setCurrentTab('');
   }
+  const openSignupModal = () => {
+    setIsOpen(true);
+    setCurrentTab('Signup');
+  }
+  const openLoginModal = () => {
+    setIsOpen(true);
+    setCurrentTab('Login');
+  }
+  const toggleModal = () => {
+    if (currentTab === "Login") {
+      openSignupModal();
+    } else if (currentTab === "Signup") {
+      openLoginModal();
+    }
+  }
+
   return (
     <>
-      {isOpen && <Modal isOpen={isOpen} onClose={closeModal} currentTab={currentTab} />}
-      <Nav openModal={openModal} />
-      <Outlet />
+      {isOpen && <Modal isOpen={isOpen} onClose={closeModal} currentTab={currentTab} toggleModal={toggleModal}/>}
+      <Nav openLoginModal={openLoginModal} openSignupModal={openSignupModal} toggleModal={toggleModal}/>
     </>
   );
 }
