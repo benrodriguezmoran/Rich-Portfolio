@@ -17,8 +17,6 @@ export default function Nav() {
     setIsModalOpen(false);
     setCurrentTab('');
   }
-  
-
   return (
     <Navbar
       links={[
