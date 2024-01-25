@@ -4,7 +4,7 @@ import Navbar from "./UI/Navbar";
 import React, { useState } from "react";
 
 
-export default function Nav({ openModal}) {
+export default function Nav({ openLoginModal, openSignupModal}) {
   return (
     <Navbar
       links={[
@@ -28,7 +28,7 @@ export default function Nav({ openModal}) {
         className="login-btn"
         onClick={() => {
           console.log("Login button clicked");
-          openModal("Login");
+          openLoginModal("Login");
         }}
       >
         Login
@@ -38,7 +38,7 @@ export default function Nav({ openModal}) {
         className="signup-btn"
         onClick={() => {
           console.log("Signup button clicked");
-          openModal("Signup");
+          openSignupModal("Signup");
         }}
       >
         Signup
