@@ -9,6 +9,7 @@ import Blog from './pages/Blog'
 import Contact from './pages/Contact'
 import Employment from './pages/Employment'
 import Projects from './pages/Projects'
+import Login from './components/Nav';
 
 //This is multer code for uploading files, please ignore for now.
 // const Main = () => {
@@ -77,6 +78,10 @@ const router = createBrowserRouter([
       {
         path: '/projects',
         element: <Projects />
+      },
+      {
+        path: '/login', 
+        element: <Login />,
       },
     ],
   },
