@@ -57,6 +57,8 @@ nav a:hover {
   cursor: pointer;
   background-color: #333743;
   border-radius: 5px;
+  transition: all 0.3s ease-in-out;
+  justify-content: right;
 }
 .login-btn:hover,
 .signup-btn:hover{
