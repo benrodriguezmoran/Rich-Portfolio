@@ -1,8 +1,6 @@
 // Bringing in the required import from 'react-router-dom'
 import { Link } from "react-router-dom";
 import Navbar from "./UI/Navbar";
-import React, { useState } from "react";
-
 
 export default function Nav({ openLoginModal, openSignupModal}) {
   return (
@@ -29,20 +27,18 @@ export default function Nav({ openLoginModal, openSignupModal}) {
         onClick={() => {
           console.log("Login button clicked");
           openLoginModal("Login");
-        }}
-      >
+        }}>
         Login
-      </button>,
-      <button
-        key={7}
-        className="signup-btn"
-        onClick={() => {
-          console.log("Signup button clicked");
-          openSignupModal("Signup");
-        }}
-      >
-        Signup
-      </button>      
+        </button>,
+        <button
+          key={7}
+          className="signup-btn"
+          onClick={() => {
+            console.log("Signup button clicked");
+            openSignupModal("Signup");
+          }}>
+          Signup
+        </button>      
       ]}
     />
   );
