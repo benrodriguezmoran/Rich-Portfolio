@@ -7,7 +7,24 @@ const resolvers = {
         
     },
     Mutation: {
+        login: async (parent, { username, password }) => {
+            const user = await User.findOne({ username });
+      
+            if (!user) {
+              throw AuthenticationError;
+            }
+      
+            const correctPw = await user.isCorrectPassword(password);
+      
+            if (!correctPw) {
+              throw AuthenticationError;
+            }
+      
+            const token = signToken(user);
+      
+            return { token, user };
+          },
+        },
+      };
 
-    }
-};
 module.exports = resolvers;
