@@ -58,7 +58,6 @@ export default function Nav({ openLoginModal, openSignupModal }) {
       <Navbar
         links={[
           <Dropdown key={1}>
-            
             <MenuButton slots={{ root: StyledMenuButton }}>
               My account
             </MenuButton>
