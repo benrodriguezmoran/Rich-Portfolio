@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import "./Modal.css";
 
 const Modal = ({ isOpen, onClose, currentTab, toggleModal }) => {
