@@ -1,14 +1,24 @@
-import './footer.css';
+import "./footer.css";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-const Footer = () => {
+function App() {
   return (
-    <footer>
-      <div className="footer-content">
-        <p>&copy; 2024 Company Name. All rights reserved.</p>
-      </div>
-    </footer>
+    <>
+      <Router>
+        <NavBar/>
+        <div>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/Contact" element={<Contact />} />
+            <Route path="/Blog" element={<Blog />} />
+            <Route path="/Employment" element={<Employment />} />
+            <Route path="/Projct" element={<Projects />} />
+          </Routes>
+          <Footer/>
+        </div>
+      </Router>
+    </>
   );
-};
+}
 
-export default Footer;
-
+export default App;
