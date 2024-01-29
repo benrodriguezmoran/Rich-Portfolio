@@ -1,12 +1,13 @@
 import { useState } from "react";
+import { useMutation } from '@apollo/client';
+// import { LOGIN } from '../../utils/mutations.js';
+// import Auth from '../../utils/auth.js';
 import "./Modal.css";
 
 const Modal = ({ isOpen, onClose, currentTab, toggleModal }) => {
-    console.log('Modal isOpen:', isOpen, 'currentTab:', currentTab);
     const [formData, setFormData] = useState({
     username: "",
     password: "",
-    confirmPassword: "",
   });
   const handleInputChange = (e) => {
     setFormData({
@@ -20,7 +21,7 @@ const Modal = ({ isOpen, onClose, currentTab, toggleModal }) => {
     setFormData({
       username: "",
       password: "",
-      confirmPassword: "",
+
     });
   };
   if (!isOpen) {
