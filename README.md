@@ -23,3 +23,8 @@ Max, Curtis, Megan, Ben
 ## Questions
 - Github [benrodriguezmoran](https://github.com/benrodriguezmoran) 
 - Email [brm@gmail.com](mailto:brm@gmail.com)
+
+
+help:
+
+https://geeksforgeeks.org/how-to-create-header-in-react-js/
