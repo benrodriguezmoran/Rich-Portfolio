@@ -4,20 +4,8 @@ const { signToken, AuthenticationError } = require('../utils/auth');
 //add query for project post and job
 const resolvers = {
     Query: {
-        user: async (parent, args, context) => {
-            if (context.user) {
-                //I'm not sure what we should replace a lot of this stuff with since we don't have orders or products
-              const user = await User.findById(context.user.id).populate({
-                path: 'orders.products',
-                populate: 'category',
-              });
-      
-              user.orders.sort((a, b) => b.purchaseDate - a.purchaseDate);
-      
-              return user;
-            }
-      
-            throw AuthenticationError;
+        user: async (parent, { userID }) => {
+            User.find();
           },
         
     },
