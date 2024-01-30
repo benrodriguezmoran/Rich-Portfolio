@@ -22,5 +22,5 @@ Max, Curtis, Megan, Ben
 
 ## Questions
 - Github [benrodriguezmoran](https://github.com/benrodriguezmoran) 
-- Email [brm@gmail.com](mailto:brm@gmail.com)
+- Email [brm@gmail.com](mailto:ben.rodriguezmoran@gmail.com)
 
