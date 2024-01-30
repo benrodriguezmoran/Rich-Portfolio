@@ -1,9 +1,9 @@
 const { User, Post, Project, Job} = require('../models');
 const { signToken, AuthenticationError } = require('../utils/auth');
 // const stripe = require('stripe')('KEY');
-//QueryAll every Job that's stored //mutation addJobs
 const resolvers = {
     Query: {
+
       job: async (parent, { id }, context) => {
         if (context.user) {
           try {
@@ -15,7 +15,6 @@ const resolvers = {
             throw new Error('Error fetching job');
           }
         }
-  
         throw new AuthenticationError('Unauthorized');
       },
       jobs: async (parent, args, context) => {
@@ -29,11 +28,9 @@ const resolvers = {
             throw new Error('Error fetching jobs');
           }
         }
-  
         throw new AuthenticationError('Unauthorized');
       },
   
-
       Post: async (parent, args, context) => {
         if (context.user) {
           const user = await User.findById(context.user.id).populate({
@@ -68,10 +65,11 @@ const resolvers = {
               return user;
             }
             throw AuthenticationError;
-          },
-        
-    },
 
+        user: async (parent, { userID }) => {
+            User.find();
+          },
+    },
 
     Mutation: {
         addUser: async (parent, args) => {
