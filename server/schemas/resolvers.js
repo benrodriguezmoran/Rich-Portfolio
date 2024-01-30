@@ -5,7 +5,6 @@ const resolvers = {
     Query: {
 
       job: async (parent, { id }, context) => {
-        if (context.user) {
           try {
             // Fetch a single job by ID
             const job = await Job.findById(id);
@@ -14,11 +13,8 @@ const resolvers = {
             console.error(error);
             throw new Error('Error fetching job');
           }
-        }
-        throw new AuthenticationError('Unauthorized');
       },
       jobs: async (parent, args, context) => {
-        if (context.user) {
           try {
             // Fetch all jobs
             const jobs = await Job.find();
@@ -27,50 +23,44 @@ const resolvers = {
             console.error(error);
             throw new Error('Error fetching jobs');
           }
-        }
-        throw new AuthenticationError('Unauthorized');
+
       },
   
       Post: async (parent, args, context) => {
-        if (context.user) {
           const user = await User.findById(context.user.id).populate({
             path: 'Post',
             populate: 'Post.find',
           });
           return user;
-        }
-  
-        throw AuthenticationError;
+
       },
 
       Project: async (parent, args, context) => {
-        if (context.user) {
           const user = await User.findById(context.user.id).populate({
             path: 'Project',
             populate: 'Project.find',
           });
           return user;
-        }
-  
-        throw AuthenticationError;
+
       },
       
-        user: async (parent, args, context) => {
-            if (context.user) {
-                //I'm not sure what we should replace a lot of this stuff with since we don't have orders or products
-              const user = await User.findById(context.user.id).populate({
-                path: 'User',
-                populate: 'User.find',
-              });
-              return user;
-            }
-            throw AuthenticationError;
-
-        user: async (parent, { userID }) => {
-            User.find();
-          },
+      user: async (parent, args, context) => {
+              //I'm not sure what we should replace a lot of this stuff with since we don't have orders or products
+            const user = await User.findById(context.user.id).populate({
+              path: 'User',
+              populate: 'User.find',
+            });
+            return user;
+      },
+      user: async (parent, { id }, context) => {
+        //I'm not sure what we should replace a lot of this stuff with since we don't have orders or products
+      const user = await User.findById(context.user.id).populate({
+        path: 'User',
+        populate: 'User.find',
+      });
+      return user;
+},
     },
-
     Mutation: {
         addUser: async (parent, args) => {
             const user = await User.create(args);
