@@ -1,7 +1,7 @@
 const { User, Post, Project, Job} = require('../models');
 const { signToken, AuthenticationError } = require('../utils/auth');
 // const stripe = require('stripe')('KEY');
-
+//add query for project post and job
 const resolvers = {
     Query: {
         user: async (parent, args, context) => {
@@ -21,6 +21,8 @@ const resolvers = {
           },
         
     },
+
+    
     Mutation: {
         addUser: async (parent, args) => {
             const user = await User.create(args);
