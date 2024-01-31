@@ -9,6 +9,7 @@ import "./Menu.css";
 const StyledMenuButton = styled("button")``;
 const StyledListbox = styled("ul")``;
 const StyledMenuItem = styled("li")``;
+
 export default function MenuDropdown({ openLoginModal, openSignupModal }) {
   const [isButtonClicked, setIsButtonClicked] =  useState(false);
 
@@ -17,6 +18,10 @@ export default function MenuDropdown({ openLoginModal, openSignupModal }) {
     setTimeout(() => {
       setIsButtonClicked(false);
     }, 1000);
+  };
+
+  const handleLanguageSettingsClick = () => {
+    alert("I HOPE YOU SPEAK ENGLISH");
   };
 
   return (
@@ -30,7 +35,11 @@ export default function MenuDropdown({ openLoginModal, openSignupModal }) {
       </MenuButton>
       <Menu slots={{ listbox: StyledListbox }} className="StyledListbox">
         <MenuItem slots={{ root: StyledMenuItem }} className="StyledMenuItem">Profile</MenuItem>
-        <MenuItem slots={{ root: StyledMenuItem }} className="StyledMenuItem">
+        <MenuItem 
+        slots={{ root: StyledMenuItem }} 
+        className="StyledMenuItem"
+        onClick={handleLanguageSettingsClick}
+        >
           Language settings
         </MenuItem>
         <MenuItem slots={{ root: StyledMenuItem }} className="StyledMenuItem">Log out</MenuItem>
