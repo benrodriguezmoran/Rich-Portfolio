@@ -68,16 +68,16 @@ const resolvers = {
       
             return { token, user };
           },
-          addJob: async (parent, args) => {
-            const title = await Job.create(args);
-            const start_date = signToken(user);
-            const end_date = signToken(user);
-            const location = signToken(user)
-            return { title, start_date, end_date, location };
-          },
+        addJob: async (parent, args) => {
+          const title = await Job.create(args);
+          const start_date = signToken(user);
+          const end_date = signToken(user);
+          const location = signToken(user)
+          return { title, start_date, end_date, location };
+        },
         login: async (parent, { username, password }) => {
             const user = await User.findOne({ username });
-      
+            console.log(user);
             if (!user) {
               throw AuthenticationError;
             }

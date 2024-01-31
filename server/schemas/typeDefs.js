@@ -1,7 +1,8 @@
 const typeDefs = `
 type User {
-    username: String
-    email: String
+    username: String!
+    email: String!
+    password: String!
 }
 type Post {
   _id: ID!
@@ -48,7 +49,7 @@ type Query {
     projects: [Project]
 }
 type Mutation {
-  addUser(username: String!, password: String!): Auth
+  addUser(username: String!, password: String!, email: String!): Auth
   addJob(title: String!, start_date: String!, end_date: String!, location: String!): Job
   updateUser(username: String, password: String): User
   login(username: String!, password: String!): Auth
