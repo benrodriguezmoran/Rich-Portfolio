@@ -14,11 +14,7 @@ const userSchema = new mongoose.Schema({
   email: {
     type: String,
     required: true,
-  },
-  roles: {
-    type: String,
-    required: true,
-  },
+  }
 });
 
 // Hashing password before saving to the database
@@ -36,6 +32,14 @@ userSchema.pre('save', async function (next) {
     return next();
   }
 });
+
+userSchema.methods.isCorrectPassword = async function (enteredPassword) {
+  try {
+    return await bcrypt.compare(enteredPassword, this.password);
+  } catch (error) {
+    throw error;
+  }
+};
 
 const User = mongoose.model('User', userSchema);
 

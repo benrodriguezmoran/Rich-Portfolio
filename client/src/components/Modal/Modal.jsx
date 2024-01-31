@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useMutation } from '@apollo/client';
-// import { LOGIN } from '../../utils/mutations.js';
+import { ADD_USER } from '../../utils/mutations.js';
 // import Auth from '../../utils/auth.js';
 import "./Modal.css";
 
@@ -9,19 +9,29 @@ const Modal = ({ isOpen, onClose, currentTab, toggleModal }) => {
     username: "",
     password: "",
   });
+  const [addUser] = useMutation(ADD_USER);
   const handleInputChange = (e) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
     });
   };
-  const handleSubmit = (e) => {
+  
+
+  const handleSubmit = async(e) => {
     e.preventDefault();
     console.log(formData);
+    const mutationResponse = await addUser({
+      variables: {
+        username: formData.username,
+        password: formData.password,
+      },
+    });
+    const token = mutationResponse.data.addUser.token;
+    Auth.login(token);
     setFormData({
       username: "",
       password: "",
-
     });
   };
   if (!isOpen) {
