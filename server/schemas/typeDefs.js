@@ -1,6 +1,6 @@
 const typeDefs = `
 type User {
-    username: String!
+    username: String
     email: String!
     password: String!
 }
