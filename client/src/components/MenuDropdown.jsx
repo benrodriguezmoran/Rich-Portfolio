@@ -21,7 +21,7 @@ export default function MenuDropdown({ openLoginModal, openSignupModal }) {
   };
 
   const handleLanguageSettingsClick = () => {
-    alert("I HOPE YOU SPEAK ENGLISH");
+    alert("cringe joke > doing what's needed");
   };
 
   return (
