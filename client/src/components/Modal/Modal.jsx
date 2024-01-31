@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useMutation } from '@apollo/client';
 import { ADD_USER } from '../../utils/mutations.js';
-// import Auth from '../../utils/auth.js';
+import Auth from '../../utils/auth.js';
 import "./Modal.css";
 
 const Modal = ({ isOpen, onClose, currentTab, toggleModal }) => {
